@@ -1,0 +1,3 @@
+# Threshold-sensitivity configuration.
+# Values will be frozen after the verified experiment is run.
+status: pending_verification
