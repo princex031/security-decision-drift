@@ -1,0 +1,5 @@
+# Canonical experiment configuration.
+# Exact verified parameters will be frozen before the paper release.
+
+experiment:
+  status: pending_final_run
