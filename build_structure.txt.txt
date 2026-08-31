@@ -1,0 +1,49 @@
+security-decision-drift/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .gitattributes
+├── CITATION.cff
+├── CHANGELOG.md
+├── pyproject.toml
+├── requirements.txt
+│
+├── config/
+│   ├── canonical.yaml
+│   ├── sensitivity.yaml
+│   └── seeds.yaml
+│
+├── src/
+│   ├── simulator.py
+│   ├── controller.py
+│   ├── intervention.py
+│   ├── reality_check.py
+│   ├── metrics.py
+│   └── statistics.py
+│
+├── experiments/
+│   ├── run_canonical.py
+│   ├── run_sensitivity.py
+│   └── run_unsw.py
+│
+├── analysis/
+│   ├── analyze_results.py
+│   └── generate_figures.py
+│
+├── tests/
+│   ├── test_controller.py
+│   ├── test_reality_check.py
+│   └── test_metrics.py
+│
+├── data/
+│   └── README.md
+│
+├── results/
+│   └── README.md
+│
+├── figures/
+│   └── README.md
+│
+└── paper/
+    └── README.md
