@@ -1,0 +1,45 @@
+"""
+End-to-end software smoke test.
+
+This is NOT a paper result and must never be cited as one.
+"""
+
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from src.controller import ControllerConfig
+from src.intervention import Intervention
+from src.runner import run_conditions
+
+
+def main() -> None:
+    config = ControllerConfig(
+        lambda_value=1.0,
+        threshold=0.5,
+    )
+
+    intervention = Intervention(
+        episode=0,
+        step=0,
+        action="defensive_intervention",
+        magnitude=0.1,
+        metadata={"smoke_test": True},
+    )
+
+    result = run_conditions(
+        observation=0.8,
+        intervention=intervention,
+        config=config,
+    )
+
+    print("Pipeline smoke test: PASS")
+    print(f"Baseline action: {result.baseline.action}")
+    print(f"History-aware action: {result.history_aware.action}")
+    print(f"Reality Check action: {result.reality_check.action}")
+
+
+if __name__ == "__main__":
+    main()

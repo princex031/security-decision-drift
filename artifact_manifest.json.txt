@@ -1,0 +1,18 @@
+{
+  "artifact": "security-decision-drift",
+  "version": "0.1.0",
+  "status": "research-implementation",
+  "canonical_configuration": "config/canonical.yaml",
+  "canonical_status": "pending_verification",
+  "primary_evidence": "controlled_simulation",
+  "trace_validation": "UNSW-NB15",
+  "missing_parameters_policy": "fail_closed",
+  "results_policy": "generated_only",
+  "required_provenance": [
+    "configuration",
+    "random_seed",
+    "raw_output",
+    "analysis_code",
+    "repository_commit"
+  ]
+}
