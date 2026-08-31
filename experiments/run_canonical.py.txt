@@ -1,0 +1,52 @@
+"""
+Run the canonical Security Decision Drift experiment.
+
+This runner is intentionally configuration-driven. It does not
+hard-code the missing historical lambda, threshold, or noise values.
+Those values must come from the verified experiment configuration.
+"""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from src.simulator import SimulationConfig
+from src.controller import ControllerConfig
+
+
+def main() -> None:
+    """Validate the canonical configuration before execution."""
+
+    simulation = SimulationConfig(
+        episodes=20_000,
+        steps_per_episode=8,
+        noise_variance=None,
+    )
+
+    controller = ControllerConfig(
+        lambda_value=None,
+        threshold=None,
+    )
+
+    print("Security Decision Drift — canonical experiment")
+    print("-" * 52)
+    print(f"Episodes: {simulation.episodes}")
+    print(f"Steps per episode: {simulation.steps_per_episode}")
+
+    try:
+        simulation.validate()
+        controller.validate()
+    except ValueError as exc:
+        print(f"Configuration is not ready: {exc}")
+        raise SystemExit(1)
+
+    print("Configuration is valid.")
+    print("Execution stage is ready for the verified parameters.")
+
+
+if __name__ == "__main__":
+    main()

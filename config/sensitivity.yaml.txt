@@ -1,3 +1,7 @@
-# Threshold-sensitivity configuration.
-# Values will be frozen after the verified experiment is run.
 status: pending_verification
+
+thresholds: []
+
+notes:
+  - Threshold values must be frozen before the sensitivity experiment.
+  - Values must not be selected to reproduce a desired result.

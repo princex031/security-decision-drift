@@ -1,3 +1,7 @@
-# Random seeds used for repeated experiments.
-# Final seed list will be frozen before the paper release.
 status: pending_verification
+
+seeds: []
+
+notes:
+  - Seed values must be recorded before repeated evaluation.
+  - Raw per-seed outputs must be retained.

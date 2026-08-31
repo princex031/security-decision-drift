@@ -1,0 +1,45 @@
+"""
+Threshold-sensitivity experiment scaffold.
+
+The actual threshold grid is supplied through configuration after
+the canonical experiment parameters have been verified.
+"""
+
+from __future__ import annotations
+
+import yaml
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CONFIG_PATH = ROOT / "config" / "sensitivity.yaml"
+
+
+def load_config() -> dict:
+    """Load threshold-sensitivity configuration."""
+
+    with CONFIG_PATH.open("r", encoding="utf-8") as handle:
+        return yaml.safe_load(handle) or {}
+
+
+def main() -> None:
+    config = load_config()
+
+    print("Security Decision Drift — threshold sensitivity")
+    print("-" * 52)
+
+    status = config.get("status")
+
+    if status != "ready":
+        print(
+            "Sensitivity configuration is not finalized. "
+            "Run is intentionally blocked until parameters are verified."
+        )
+        raise SystemExit(1)
+
+    print("Sensitivity configuration loaded.")
+    print("Threshold sweep execution is ready.")
+
+
+if __name__ == "__main__":
+    main()
