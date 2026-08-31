@@ -1,0 +1,8 @@
+[project]
+name = "security-decision-drift"
+version = "0.1.0"
+description = "Reproducible research artifact for security decision drift"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
