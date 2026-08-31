@@ -1,5 +1,25 @@
-# Canonical experiment configuration.
-# Exact verified parameters will be frozen before the paper release.
+status: pending_verification
 
 experiment:
-  status: pending_final_run
+  episodes: 20000
+  steps_per_episode: 8
+  paired_observations: 50000
+
+controller:
+  lambda: null
+  threshold: null
+
+noise:
+  variance: null
+
+intervention:
+  strong_effect: null
+  moderate_effect: null
+  duration_steps: null
+
+randomness:
+  seeds: []
+
+metadata:
+  source: "paper specification plus verified experiment record"
+  result_reproduction_mode: "blocked_until_parameters_are_verified"

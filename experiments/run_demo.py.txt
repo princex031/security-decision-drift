@@ -1,0 +1,38 @@
+"""
+Small deterministic smoke test.
+
+This is NOT the paper's canonical experiment.
+It only verifies that the software components connect correctly.
+"""
+
+from __future__ import annotations
+
+from src.controller import ControllerConfig
+from src.experiment import run_paired_case
+
+
+def main() -> None:
+    config = ControllerConfig(
+        lambda_value=1.0,
+        threshold=0.5,
+    )
+
+    result = run_paired_case(
+        seed=42,
+        episode=0,
+        step=0,
+        external_state=0.2,
+        attack_signal=0.6,
+        intervention_effect=0.1,
+        controller=config,
+    )
+
+    print("Smoke test completed.")
+    print(f"Control observation: {result.control_observation:.4f}")
+    print(f"Treated observation: {result.treated_observation:.4f}")
+    print(f"Control action: {result.control_decision.action}")
+    print(f"Treated action: {result.treated_decision.action}")
+
+
+if __name__ == "__main__":
+    main()
