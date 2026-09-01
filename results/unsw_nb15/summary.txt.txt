@@ -1,0 +1,28 @@
+UNSW-NB15 REAL-DATA EVALUATION
+
+Training samples: 82332
+Testing samples: 175341
+
+BASELINE
+Accuracy: 0.8776783524674776
+Precision: 0.9785960829560677
+Recall: 0.8386220996975055
+F1: 0.9032182372795697
+
+Baseline false actions: 2189
+
+REALITY CHECK
+Accuracy: 0.8407331998790928
+Precision: 0.9880099507799405
+Recall: 0.7754082838253409
+F1: 0.8688932498286401
+
+Reality Check false actions: 1123
+
+False-action reduction: 48.7%
+Decision drift rate: 0.049104316731397674
+
+NOTE:
+The intervention adjustment is a controlled experimental
+parameter and is not claimed to be directly observed in
+the UNSW-NB15 dataset.
