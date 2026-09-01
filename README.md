@@ -66,3 +66,9 @@ Decision drift rate was 4.91%.
 
 The intervention adjustment is a controlled experimental parameter
 and is not claimed to be directly observed in UNSW-NB15.
+## Reproduction
+
+Install dependencies:
+
+```bash
+python -m pip install pandas numpy scikit-learn pytest
